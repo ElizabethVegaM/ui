@@ -249,7 +249,6 @@ const SideBar = (props, theme) => {
             key={item.id}
             data-test={`item-${item.id}`}
             selected={isSelected(currentPath, item.id)}
-            onClick={() => isMobile && setIsOpen(!isOpen)}
           >
             <ListItemIcon className={classes.listItemIcon}>{item.icon}</ListItemIcon>
             <ListItemText
@@ -320,6 +319,7 @@ const SideBar = (props, theme) => {
             ModalProps={{
               keepMounted: true, // Better open performance on mobile.
             }}
+            onClick={() => setIsOpen(!isOpen)}
           >
             {drawer}
           </Drawer>
